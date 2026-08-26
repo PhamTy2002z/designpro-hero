@@ -33,7 +33,11 @@ export function ShinyText({
         WebkitTextFillColor: "transparent",
       }}
       initial={{ backgroundPosition: "150% 50%" }}
-      animate={disabled ? undefined : { backgroundPosition: ["150% 50%", "-50% 50%"] }}
+      animate={
+        disabled
+          ? { backgroundPosition: "150% 50%" }
+          : { backgroundPosition: ["150% 50%", "-50% 50%"] }
+      }
       transition={{ duration: speed, ease: "linear", repeat: Infinity }}
     >
       {text}
